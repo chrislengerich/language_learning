@@ -1,0 +1,27 @@
+/*
+ * Use this file to install your script as a Chrome extension.
+ *
+ * 1. Place this file in the same directory as your user script.
+ * 2. Update "js" with your script's filename, as well as description" and "name" below.
+ * 3. Remove any existing CS255 user scripts from Chrome's extension panel.
+ * 4. Install your project directory as an unpacked extension: http://developer.chrome.com/extensions/getstarted.html#unpacked
+      This has the added benefit that you can test updates to your code simply by saving your code and refreshing the Chrome extensions page.
+  * 
+ */
+
+{
+  "content_scripts": [ {
+    "exclude_globs": [  ],
+    "include_globs": [ "http://translate.google.com/*", "https://translate.gooogle.com/*" ],
+    "js": [ "jquery.min.js", "tingxie.user.js" ],
+    "matches": [ "http://translate.google.com/*", "https://translate.google.com/*" ],
+    "run_at": "document_idle"
+  } ],
+  "permissions": ["storage"],
+  "converted_from_user_script": true,
+  "description": "A Chrome user script for reading tingxie (听写）in Google Translate",
+  "name": "Tingxie Reader",
+  "author": "Chris Lengerich", 
+  "version": "0.1",
+  "manifest_version": 2
+}
